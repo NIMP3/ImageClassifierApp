@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +12,83 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ImageClassifierApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3T7-QH-5cP">
+                                <rect key="frame" x="160.66666666666666" y="72" width="72" height="70.666666666666686"/>
+                                <color key="backgroundColor" red="0.86346273111771066" green="0.87406797120378843" blue="0.90588369146202175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" name="TintColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="72" id="k8s-Uk-ws3"/>
+                                    <constraint firstAttribute="width" constant="72" id="qkW-vt-elA"/>
+                                </constraints>
+                                <imageReference key="image" image="camera.circle" catalog="system" symbolScale="medium" renderingMode="original"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="23c-R3-YTh">
+                                <rect key="frame" x="24" y="682.33333333333337" width="345" height="127.66666666666663"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Computer Keyboard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g98-DJ-qun">
+                                        <rect key="frame" x="12" y="12" width="321" height="103.66666666666667"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="g98-DJ-qun" firstAttribute="top" secondItem="23c-R3-YTh" secondAttribute="top" constant="12" id="2Hw-iB-mXG"/>
+                                    <constraint firstAttribute="trailing" secondItem="g98-DJ-qun" secondAttribute="trailing" constant="12" id="2sh-jm-AOP"/>
+                                    <constraint firstAttribute="bottom" secondItem="g98-DJ-qun" secondAttribute="bottom" constant="12" id="6g8-ET-h6m"/>
+                                    <constraint firstItem="g98-DJ-qun" firstAttribute="leading" secondItem="23c-R3-YTh" secondAttribute="leading" constant="12" id="sdN-xX-0Xn"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dNQ-mP-7J0" customClass="PreviewView" customModule="ImageClassifierApp" customModuleProvider="target">
+                                <rect key="frame" x="24" y="158.99999999999997" width="345" height="507.33333333333326"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="23c-R3-YTh" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.15" id="3W1-At-7oc"/>
+                            <constraint firstItem="3T7-QH-5cP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="Awl-SM-UrW"/>
+                            <constraint firstItem="dNQ-mP-7J0" firstAttribute="top" secondItem="3T7-QH-5cP" secondAttribute="bottom" constant="16" id="DC8-pq-hY8"/>
+                            <constraint firstItem="23c-R3-YTh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="MHA-qY-HRL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="23c-R3-YTh" secondAttribute="trailing" constant="24" id="V9g-Xs-Kmg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dNQ-mP-7J0" secondAttribute="trailing" constant="24" id="Z2d-Dj-wpj"/>
+                            <constraint firstItem="23c-R3-YTh" firstAttribute="top" secondItem="dNQ-mP-7J0" secondAttribute="bottom" constant="16" id="gpW-bT-nIc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="23c-R3-YTh" secondAttribute="bottom" constant="8" id="tBN-w5-Mqc"/>
+                            <constraint firstItem="dNQ-mP-7J0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="ueb-Va-FT4"/>
+                            <constraint firstItem="3T7-QH-5cP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xEv-Xs-bsk"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="iconImage" destination="3T7-QH-5cP" id="8JB-rZ-tz2"/>
+                        <outlet property="previewView" destination="dNQ-mP-7J0" id="3Yl-Pn-zYs"/>
+                        <outlet property="resultLabel" destination="g98-DJ-qun" id="yPm-D9-Oeo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-31.297709923664122" y="-27.464788732394368"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="camera.circle" catalog="system" width="128" height="123"/>
+        <namedColor name="BackgroundColor">
+            <color red="0.7888457871012482" green="0.7888457871012482" blue="0.7888457871012482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TintColor">
+            <color red="0.34708257870638565" green="0.2541758776171632" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
